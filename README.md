@@ -308,7 +308,7 @@ if you have this type data
 </div>
 ```
 
-*** But you want something like this ***
+**But you want something like this**
 
 ```
 <h2><span style="color: #0170dc;">Network</span></h2>
@@ -595,4 +595,4 @@ if you have this type data
 ```
 
 
-Then you can use this app or source code and you are free to chnage anything you want
+**Then you can use this app or source code and you are free to change anything you want**

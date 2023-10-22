@@ -83,6 +83,7 @@ import cheerio from 'cheerio';
 
 let scrapTableData = ref(null);
 const alertSuccess = ref(false);
+const div_p_value = ref('');
 
 const formData = ref({
   scrapCode: ''
@@ -94,6 +95,9 @@ const submitForm = () => {
 
   const $ = cheerio.load(productSpeec);
   const tableData = {};
+
+  if($('p').text() != '')
+    div_p_value.value = `<p><em><span style="color: #616161;">${$('p').text()}</span></em></p>`;
 
   // Iterate over each table and extract data
   $('table').each((index, element) => {
@@ -127,11 +131,13 @@ const submitForm = () => {
 
   scrapTableData.value = generateHTMLFromJSON(jsonData);
 
-  console.log(scrapTableData);
 };
 
 function generateHTMLFromJSON(jsonData) {
   let html = '';
+
+  if(div_p_value.value != '')
+    html += div_p_value.value;
 
   for (const section in jsonData) {
     html += `<h2><span style="color: #1770dc;">${section}</span></h2><table><tbody>`;
@@ -151,6 +157,8 @@ function generateHTMLFromJSON(jsonData) {
 
     html += `</tbody></table>`;
   }
+
+  html += `<p><span style="color: #616161;"><em><strong>Disclaimer:</strong> We cannot guarantee that the information on this page is 100% accurate.  Please help us if you have found any mistake or wrong information.</span></em></p>`;
 
   return html;
 }

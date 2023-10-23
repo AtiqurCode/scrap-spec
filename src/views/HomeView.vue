@@ -174,9 +174,22 @@ const copyToClipboard = () => {
   document.execCommand('copy');
   document.body.removeChild(textarea);
   alertSuccess.value = true;
+  alertSuccessFunc();
 }
 
 const alertToast = () => {
   alertSuccess.value = false;
+}
+
+function alertSuccessFunc() {
+  // Set a time delay (in milliseconds)
+  const timeDelay = 4000; // 3 seconds
+
+  // Use setTimeout to change the constant value after the delay
+  setTimeout(() => {
+    alertSuccess.value = false;
+
+    console.log(alertSuccess.value);
+  }, timeDelay);
 }
 </script>

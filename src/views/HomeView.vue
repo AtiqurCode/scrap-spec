@@ -189,7 +189,7 @@ function alertSuccessFunc() {
   setTimeout(() => {
     alertSuccess.value = false;
 
-    console.log(alertSuccess.value);
+    // console.log(alertSuccess.value);
   }, timeDelay);
 }
 </script>

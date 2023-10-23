@@ -160,7 +160,7 @@ function generateHTMLFromJSON(jsonData) {
     html += `</tbody></table>`;
   }
 
-  html += `<p><span style="color: #616161;"><em><strong>Disclaimer:</strong> We cannot guarantee that the information on this page is 100% accurate.  Please help us if you have found any mistake or wrong information.</span></em></p>`;
+  html += `<em><span style="color: #616161;"><strong>Disclaimer:</strong> We cannot guarantee that the information on this page is 100% accurate.  Please help us if you have found any mistake or wrong information.</span></em>`;
 
   return html;
 }

@@ -150,6 +150,8 @@ function generateHTMLFromJSON(jsonData) {
         value = '❌';
       if (value == "Yes")
         value = '✅';
+      if(key == 'Price')
+        value = `<strong><span style="color: #616161;">Worldwide: ${value}</span><strong>`;
 
       html += `<tr><td><strong><span style="color: #616161;">${key}</span></strong></td><td>${value}</td></tr>`;
 
